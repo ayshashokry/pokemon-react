@@ -6,9 +6,9 @@ interface Props {
 export default function ToggleView({ viewType, setViewType }: Props) {
   const type = viewType === "pagination" ? "Page Controls" : "Infinite Scroll";
   return (
-    <div className="text-center">
-      <h1 className="text-2xl font-bold mb-2">Pokedex</h1>
-      <p className="mb-4" id="view-description">
+    <div className="text-center px-4 sm:px-6">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 pt-3">Pokedex</h1>
+      <p className="mb-4 text-sm sm:text-base" id="view-description">
         Discover and explore pokemon with {type}
       </p>
 
@@ -16,13 +16,13 @@ export default function ToggleView({ viewType, setViewType }: Props) {
         role="group"
         aria-labelledby="view-type-label"
         aria-describedby="view-description"
-        className="inline-flex rounded-md p-1 gap-2"
+        className="inline-flex flex-col sm:flex-row rounded-md p-1 gap-2 w-full sm:w-auto max-w-sm mx-auto"
       >
         <span id="view-type-label" className="sr-only">
           Choose view type
         </span>
         <button
-          className={`px-3 py-1 rounded transition-colors cursor-pointer outline-none ${
+          className={`px-3 py-2 sm:py-1 rounded transition-colors cursor-pointer outline-none text-sm sm:text-base ${
             viewType === "pagination" ? "bg-black text-white" : "bg-white"
           }`}
           onClick={() => setViewType("pagination")}
@@ -32,7 +32,7 @@ export default function ToggleView({ viewType, setViewType }: Props) {
           Page Controls
         </button>
         <button
-          className={`px-3 py-1 rounded transition-colors cursor-pointer outline-none ${
+          className={`px-3 py-2 sm:py-1 rounded transition-colors cursor-pointer outline-none text-sm sm:text-base ${
             viewType === "infinite" ? "bg-black text-white" : "bg-white"
           }`}
           onClick={() => setViewType("infinite")}

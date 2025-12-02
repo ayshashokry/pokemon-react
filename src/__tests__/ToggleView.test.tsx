@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ToggleView from "./ToggleView";
+import ToggleView from "./../components/ToggleView";
 
 describe("ToggleView", () => {
   it("renders both buttons and updates description based on viewType", () => {
